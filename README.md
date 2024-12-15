@@ -1,6 +1,6 @@
 # Go-Alchemy-SDK
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/teyz/go-alchemy-sdk.svg)](https://pkg.go.dev/github.com/teyz/go-alchemy-sdk) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/teyz/go-alchemy-sdk)](https://github.com/teyz/go-alchemy-sdk/releases) [![Tests Passing](https://github.com/teyz/go-alchemy-sdk/actions/workflows/tests.yml/badge.svg)](https://github.com/teyz/go-alchemy-sdk/actions)
+[![Go Reference](https://pkg.go.dev/badge/github.com/teyz/go-alchemy-sdk.svg)](https://pkg.go.dev/github.com/teyz/go-alchemy-sdk) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/Teyz/go-alchemy-sdk)](https://github.com/Teyz/go-alchemy-sdk/releases) [![Tests Passing](https://github.com/teyz/go-alchemy-sdk/actions/workflows/tests.yml/badge.svg)](https://github.com/teyz/go-alchemy-sdk/actions)
 
 `go-alchemy-sdk` is a Go client library for interacting with the [Alchemy API](https://www.alchemy.com/) to access blockchain data and services. This library aims to provide a simple and efficient interface for developers building on top of Solana and other blockchains supported by Alchemy.
 
