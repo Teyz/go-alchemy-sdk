@@ -39,7 +39,7 @@ func main() {
 	}
 
 	// Example: Get the balance
-	balance, err := client.GetBalance("your-solana-address)
+	balance, err := client.GetBalance("your-solana-address")
 	if err != nil {
 		log.Fatalf("Failed to get balance: %v", err)
 	}
