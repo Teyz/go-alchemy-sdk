@@ -4,12 +4,13 @@ import (
 	"fmt"
 )
 
-type alchemy struct {
+type AlchemyService struct {
 	AlchemyUrl string
+	Store      Alchemy
 }
 
-func NewAlchemyClient(apiKey string) (*alchemy, error) {
-	return &alchemy{
+func NewAlchemyClient(apiKey string) (*AlchemyService, error) {
+	return &AlchemyService{
 		AlchemyUrl: fmt.Sprintf("https://solana-mainnet.g.alchemy.com/v2/%s", apiKey),
 	}, nil
 }

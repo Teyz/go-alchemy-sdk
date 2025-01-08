@@ -9,7 +9,7 @@ import (
 	rpc "github.com/teyz/go-alchemy-sdk/rpc"
 )
 
-func (a *alchemy) GetAccountInfo(address string, encodingType rpc.EncodingType, commitment rpc.CommitmentType) (*rpc.GetAccountInfoResponse, error) {
+func (a *AlchemyService) GetAccountInfo(address string, encodingType rpc.EncodingType, commitment rpc.CommitmentType) (*rpc.GetAccountInfoResponse, error) {
 	requestBody := &rpc.AlchemyRequest{
 		JsonRPC: rpc.JsonRPCVersion2_0,
 		Method:  rpc.MethodGetAccountInfo,
@@ -36,7 +36,7 @@ func (a *alchemy) GetAccountInfo(address string, encodingType rpc.EncodingType, 
 	return parsedResponse, nil
 }
 
-func (a *alchemy) GetBalance(address string) (*rpc.GetBalanceResponse, error) {
+func (a *AlchemyService) GetBalance(address string) (*rpc.GetBalanceResponse, error) {
 	requestBody := &rpc.AlchemyRequest{
 		JsonRPC: rpc.JsonRPCVersion2_0,
 		Method:  rpc.MethodGetBalance,
@@ -59,7 +59,7 @@ func (a *alchemy) GetBalance(address string) (*rpc.GetBalanceResponse, error) {
 	return parsedResponse, nil
 }
 
-func (a *alchemy) GetBlock(slotNumber uint64, commitment rpc.CommitmentType, maxSupportedTransactionVersion *uint64) (*rpc.GetBlockResponse, error) {
+func (a *AlchemyService) GetBlock(slotNumber uint64, commitment rpc.CommitmentType, maxSupportedTransactionVersion *uint64) (*rpc.GetBlockResponse, error) {
 	requestBody := &rpc.AlchemyRequest{
 		JsonRPC: rpc.JsonRPCVersion2_0,
 		Method:  rpc.MethodGetBlock,
@@ -90,7 +90,7 @@ func (a *alchemy) GetBlock(slotNumber uint64, commitment rpc.CommitmentType, max
 	return parsedResponse, nil
 }
 
-func (a *alchemy) GetTransaction(signature string, commitment rpc.CommitmentType, maxSupportedTransactionVersion *uint64) (*rpc.GetTransactionResponse, error) {
+func (a *AlchemyService) GetTransaction(signature string, commitment rpc.CommitmentType, maxSupportedTransactionVersion *uint64) (*rpc.GetTransactionResponse, error) {
 	requestBody := &rpc.AlchemyRequest{
 		JsonRPC: rpc.JsonRPCVersion2_0,
 		Method:  rpc.MethodGetTransaction,
@@ -140,7 +140,7 @@ func (a *alchemy) GetTransaction(signature string, commitment rpc.CommitmentType
 	return parsedResponse, nil
 }
 
-func (a *alchemy) RequestAirdrop(address string, lamports uint64, commitment rpc.CommitmentType) (*rpc.RequestAirdropResponse, error) {
+func (a *AlchemyService) RequestAirdrop(address string, lamports uint64, commitment rpc.CommitmentType) (*rpc.RequestAirdropResponse, error) {
 	requestBody := &rpc.AlchemyRequest{
 		JsonRPC: rpc.JsonRPCVersion2_0,
 		Method:  rpc.MethodRequestAirdrop,

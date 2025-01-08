@@ -9,7 +9,7 @@ import (
 	"reflect"
 )
 
-func (a *alchemy) makeCall(method string, requestBody interface{}, expectedResponse interface{}) (interface{}, error) {
+func (a *AlchemyService) makeCall(method string, requestBody interface{}, expectedResponse interface{}) (interface{}, error) {
 	jsonData, err := json.Marshal(requestBody)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling request body: %w", err)
