@@ -2,11 +2,13 @@ package alchemy
 
 import (
 	"fmt"
+
+	"github.com/teyz/go-alchemy-sdk/solana"
 )
 
 type AlchemyService struct {
 	AlchemyUrl string
-	Store      Alchemy
+	Solana     solana.Solana
 }
 
 func NewAlchemyClient(apiKey string) (*AlchemyService, error) {

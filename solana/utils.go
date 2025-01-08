@@ -1,4 +1,4 @@
-package alchemy
+package solana
 
 import (
 	"bytes"
@@ -9,7 +9,7 @@ import (
 	"reflect"
 )
 
-func (a *AlchemyService) makeCall(method string, requestBody interface{}, expectedResponse interface{}) (interface{}, error) {
+func (a *solanaClient) makeCall(method string, requestBody interface{}, expectedResponse interface{}) (interface{}, error) {
 	jsonData, err := json.Marshal(requestBody)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling request body: %w", err)
