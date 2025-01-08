@@ -9,7 +9,7 @@ import (
 	"reflect"
 )
 
-func (a *Alchemy) makeCall(method string, requestBody interface{}, expectedResponse interface{}) (interface{}, error) {
+func (a *alchemy) makeCall(method string, requestBody interface{}, expectedResponse interface{}) (interface{}, error) {
 	jsonData, err := json.Marshal(requestBody)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling request body: %w", err)
@@ -37,12 +37,12 @@ func (a *Alchemy) makeCall(method string, requestBody interface{}, expectedRespo
 		return nil, fmt.Errorf("received non-200 status code: %d, body: %s", resp.StatusCode, string(body))
 	}
 
-	// var data interface{}
-	// err = json.Unmarshal(body, &data)
-	// if err != nil {
-	// 	fmt.Println("Erreur lors du Unmarshal :", err)
-	// 	return nil, nil
-	// }
+	var data interface{}
+	err = json.Unmarshal(body, &data)
+	if err != nil {
+		fmt.Println("Erreur lors du Unmarshal :", err)
+		return nil, nil
+	}
 	// var prettyJSON bytes.Buffer
 	// err = json.Indent(&prettyJSON, body, "", "  ")
 	// if err != nil {

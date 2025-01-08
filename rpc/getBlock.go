@@ -1,11 +1,11 @@
 package rpc
 
 type GetBlockParams struct {
-	Encoding                       EncodingType   `json:"encoding"`
-	TransactionDetails             string         `json:"transactionDetails"`
-	Rewards                        bool           `json:"rewards"`
-	Commitment                     CommitmentType `json:"commitment"`
-	MaxSupportedTransactionVersion *uint64        `json:"maxSupportedTransactionVersion"`
+	Encoding                       EncodingType       `json:"encoding"`
+	TransactionDetails             TransactionDetails `json:"transactionDetails"`
+	Rewards                        bool               `json:"rewards"`
+	Commitment                     CommitmentType     `json:"commitment"`
+	MaxSupportedTransactionVersion *uint64            `json:"maxSupportedTransactionVersion"`
 }
 
 type GetBlockResponse struct {

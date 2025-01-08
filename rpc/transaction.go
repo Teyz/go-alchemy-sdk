@@ -5,7 +5,7 @@ type Details struct {
 	Meta        *Meta       `json:"meta"`
 	Slot        uint64      `json:"slot"`
 	Transaction interface{} `json:"transaction"`
-	Version     string      `json:"version"`
+	Version     interface{} `json:"version"`
 }
 
 type Transaction struct {
@@ -31,13 +31,13 @@ type Meta struct {
 	ComputeUnitsConsumed uint64               `json:"computeUnitsConsumed"`
 	Err                  *interface{}         `json:"err,omitempty"`
 	Fee                  uint64               `json:"fee"`
-	InnerInstructions    *[]InnerInstructions `json:"innerInstructions"`
+	InnerInstructions    []*InnerInstructions `json:"innerInstructions"`
 	LoadedAddresses      LoadedAddresses      `json:"loadedAddresses"`
 	LogMessages          []string             `json:"logMessages"`
 	PostBalances         []uint64             `json:"postBalances"`
-	PostTokenBalances    []uint64             `json:"postTokenBalances"`
+	PostTokenBalances    *[]interface{}       `json:"postTokenBalances"`
 	PreBalances          []uint64             `json:"preBalances"`
-	PreTokenBalances     []uint64             `json:"preTokenBalances"`
+	PreTokenBalances     *[]interface{}       `json:"preTokenBalances"`
 	Rewards              *[]Rewards           `json:"rewards"`
 	//DEPRECATED IN SOLANA
 	Status interface{} `json:"status"`

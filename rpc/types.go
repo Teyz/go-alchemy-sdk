@@ -14,6 +14,7 @@ const (
 	MethodGetTransaction Method = "getTransaction"
 	MethodGetBalance     Method = "getBalance"
 	MethodGetBlock       Method = "getBlock"
+	MethodRequestAirdrop Method = "requestAirdrop"
 )
 
 type CommitmentType string
@@ -32,4 +33,12 @@ const (
 	EncodingBase64Zstd EncodingType = "base64+zstd"
 	EncodingJsonParsed EncodingType = "jsonParsed"
 	EncodingJson       EncodingType = "json"
+)
+
+type TransactionDetails string
+
+const (
+	TransactionDetailsNone       TransactionDetails = "none"
+	TransactionDetailsFull       TransactionDetails = "full"
+	TransactionDetailsSignatures TransactionDetails = "signatures"
 )
