@@ -89,7 +89,6 @@ func (a *solanaClient) GetBlock(slotNumber uint64, commitment rpc.CommitmentType
 }
 
 func (a *solanaClient) GetTransaction(signature string, commitment rpc.CommitmentType, maxSupportedTransactionVersion *uint64) (*rpc.GetTransactionResponse, error) {
-	fmt.Print("Getting transaction\n")
 	requestBody := &rpc.AlchemyRequest{
 		JsonRPC: rpc.JsonRPCVersion2_0,
 		Method:  rpc.MethodGetTransaction,
@@ -105,7 +104,6 @@ func (a *solanaClient) GetTransaction(signature string, commitment rpc.Commitmen
 
 	response, err := a.makeCall(http.MethodPost, requestBody, &rpc.GetTransactionResponse{})
 	if err != nil {
-		fmt.Printf("error getting transaction: %v\n", err)
 		return nil, err
 	}
 

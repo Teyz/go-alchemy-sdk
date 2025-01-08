@@ -1,5 +1,11 @@
 package rpc
 
+import (
+	"encoding/json"
+
+	"github.com/mr-tron/base58"
+)
+
 type Details struct {
 	BlockTime   uint64       `json:"blockTime"`
 	Meta        *Meta        `json:"meta"`
@@ -52,7 +58,7 @@ type InnerInstructions struct {
 	Index        int `json:"index"`
 	Instructions []struct {
 		Accounts       []uint64 `json:"accounts"`
-		Data           string   `json:"data"`
+		Data           Base58   `json:"data"`
 		ProgramIdIndex uint64   `json:"programIdIndex"`
 		StackHeight    uint64   `json:"stackHeight"`
 	}
@@ -64,4 +70,30 @@ type Rewards struct {
 	PostBalance uint64 `json:"postBalance"`
 	RewardType  string `json:"rewardType"`
 	Commission  uint64 `json:"commission"`
+}
+
+type Base58 []byte
+
+func (t Base58) MarshalJSON() ([]byte, error) {
+	return json.Marshal(base58.Encode(t))
+}
+
+func (t *Base58) UnmarshalJSON(data []byte) (err error) {
+	var s string
+	err = json.Unmarshal(data, &s)
+	if err != nil {
+		return
+	}
+
+	if s == "" {
+		*t = []byte{}
+		return nil
+	}
+
+	*t, err = base58.Decode(s)
+	return
+}
+
+func (t Base58) String() string {
+	return base58.Encode(t)
 }
