@@ -1,11 +1,11 @@
 package rpc
 
 type Details struct {
-	BlockTime   uint64      `json:"blockTime"`
-	Meta        *Meta       `json:"meta"`
-	Slot        uint64      `json:"slot"`
-	Transaction interface{} `json:"transaction"`
-	Version     interface{} `json:"version"`
+	BlockTime   uint64       `json:"blockTime"`
+	Meta        *Meta        `json:"meta"`
+	Slot        uint64       `json:"slot"`
+	Transaction *Transaction `json:"transaction"`
+	Version     interface{}  `json:"version"`
 }
 
 type Transaction struct {
