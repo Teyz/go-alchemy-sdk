@@ -38,13 +38,13 @@ func main() {
 		log.Fatalf("Failed to create client: %v", err)
 	}
 
-	// Example: Get the latest block number
-	blockNumber, err := client.GetBlockNumber()
+	// Example: Get the balance
+	balance, err := client.GetBalance("your-solana-address")
 	if err != nil {
-		log.Fatalf("Failed to get block number: %v", err)
+		log.Fatalf("Failed to get balance: %v", err)
 	}
 
-	fmt.Printf("Latest Block Number: %d\n", blockNumber)
+	fmt.Printf("Balance: %v\n", balance)
 }
 ```
 
